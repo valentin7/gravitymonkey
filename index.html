@@ -32,19 +32,20 @@
 <body>
     <header  id="water" style="background-image: url('assets/img/wallpaper_really_empty.png');">
         <!--<canvas width="671" height="134"></canvas>-->
-        <div class="intro-content">
+        <div id="scene" class="intro-content">
             <!--<h1>Gravity Monkey</h2>-->
 
-            <img src="assets/img/LogoSeparated.png" class="img-responsive img-centered" alt="">
+            <img src="assets/img/LogoSeparated.png" class="layer img-responsive img-centered" data-depth="0.60" alt="">
+            <br>
             <!--<hr class="colored">-->
             <ul class="list-inline intro-social-buttons">
-             <li>
+             <li class="layer" data-depth="0.40">
                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-apple fa-fw"></i> <span class="network-name">Appstore</span></a>
             </li>
-            <li>
+            <li class="layer" data-depth="0.40">
                 <a href="https://facebook.com/gravitymonkey" class="btn btn-default btn-lg"><i class="fa fa-facebook"></i> <span class="network-name">Facebook</span></a>
             </li>
-            <li>
+            <li class="layer" data-depth="0.40">
                 <a href="https://twitter.com/gravity_monkey" class="btn btn-default btn-lg"><i class="fa fa-twitter"></i> <span class="network-name">Twitter</span></a>
             </li>
         </ul>
@@ -61,5 +62,21 @@
    
      <!-- Vitality Theme Scripts -->
     <script src="assets/js/vitality.js"></script>
+
+    <!-- Parallax  Scripts -->
+    <script src="assets/js/parallax.js"></script>
+
+    <script>
+        $(function() {
+            try {
+                var scene = document.getElementById('scene');
+                var parallax = new Parallax(scene);
+            }
+            catch (e) {
+                $('.error').show().text(e);
+            }
+        }); 
+    </script>
+
 </body>
 </html>
